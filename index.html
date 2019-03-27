@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Projet Développement Multimédia</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container">
+
+    <h1>Projet Développement Multimédia </h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Camera</h4>
+                </div>
+                <div class="card-body" style="height: 300;">
+                    <video id="player" autoplay></video>
+                    <canvas id="canvas" width="320px" height="240px"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h4>Tools</h4>
+                </div>
+                <ul class="list-group list-group-flush tools">
+                    <li class="list-group-item">
+                        <a href="#" id="capture-btn">
+                            <i class="fas fa-camera"></i>
+                            <br>
+                            Camera
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#" id="retake-btn">
+                            <i class="fas fa-camera"><small><i class="fas fa-retweet"></i></small></i>
+                            <br>
+                            Retake
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#" id="timer-btn">
+                            <i class="fas fa-stopwatch"></i>
+                            <br>
+                            Timer(<span id="timer-label">3</span>s)
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#" id="save-btn">
+                            <i class="fas fa-save"></i>
+                            <br>
+                            Enregistrer
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+
+    <div id="newImages"></div>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
