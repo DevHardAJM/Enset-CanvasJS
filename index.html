@@ -1,84 +1,147 @@
-<!doctype html>
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <title>Projet Développement Multimédia</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+	<title>App</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 
 <body class="container">
+	<h1>Projet Développement Multimédia </h1>
+	<hr>
+	<div class="mx-4">
+		<div class="row">
+			<div class="col-md">
+				<div class="card" style="width: 30rem;">
+					<div class="card-header text-center">
+						<h5 class="card-title">Camera</h5>
+					</div>
+					<div class="card-body">
+						<div class="text-center">
+							<h5>(<span id="timerest">3</span>) s</h5>
+						</div>
+						<video id="camera" width="435" height="250" autoplay></video>
+						<span id="countdown"></span>
+						<br />
+						<div id="opvid">
+							<br />
+							<div class="row">
+								<div class="col-1"></div>
+								<div class="col-5 tool text-center">
+									<a href="#" class="btn btn-outline-primary" id="capture-btn">
+										<i class="fas fa-camera"></i>
+										<br>
+										Capture
+									</a>
+								</div>
 
-    <h1>Projet Développement Multimédia </h1>
-    <hr>
-    <div class="row">
-        <div class="col-md-5">
-            <div class="card">
-                <div class="card-header">
-                    <h4>Camera</h4>
-                </div>
-                <div class="card-body" style="height: 300;">
-                    <video id="player" autoplay></video>
-                    <canvas id="canvas" width="320px" height="240px"></canvas>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="card text-center">
-                <div class="card-header">
-                    <h4>Tools</h4>
-                </div>
-                <ul class="list-group list-group-flush tools">
-                    <li class="list-group-item">
-                        <a href="#" id="capture-btn">
-                            <i class="fas fa-camera"></i>
-                            <br>
-                            Camera
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#" id="retake-btn">
-                            <i class="fas fa-camera"><small><i class="fas fa-retweet"></i></small></i>
-                            <br>
-                            Retake
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#" id="timer-btn">
-                            <i class="fas fa-stopwatch"></i>
-                            <br>
-                            Timer(<span id="timer-label">3</span>s)
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#" id="save-btn">
-                            <i class="fas fa-save"></i>
-                            <br>
-                            Enregistrer
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-5"></div>
-    </div>
+								<div class="col-5 tool text-center">
+									<a href="#" class="btn btn-outline-primary" id="timer-btn">
+										<i class="fas fa-stopwatch"></i>
+										<br>
+										Timer(<span id="timer-label">3</span>s)
+									</a>
+								</div>
+								
+								<div class="col-1"></div>
 
-    <div id="newImages"></div>
+							</div>
 
-    <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md">
+				<div class="card" style="width: 30rem;" id='container'>
+					<div class="card-header text-center">
+						<h5 class="card-title">Image</h5>
+					</div>
+					<div class="card-body">
+						<br />
+						<br />
+						<canvas id="resultat" width="435" height="250"></canvas>
+
+						<div id='cadre'>
+
+							<div class="corner tl"></div>
+							<div class="corner tr"></div>
+							<div class="corner bl"></div>
+							<div class="corner br"></div>
+
+							<div class="corner tc"></div>
+							<div class="corner bc"></div>
+							<div class="corner lc"></div>
+							<div class="corner rc"></div>
+
+						</div>
+
+						<hr>
+						<div id="opimg">
+							<h3 class="text-center">Filters</h3>
+							<table style="margin:auto;">
+								<tr>
+									<td>Brightness</td>
+									<td><input id="fbrightness" type="range" min="0" max="200" step="1" value="100"
+											onchange="filtercanvas(this.id,this.value)" /></td>
+								</tr>
+								<tr>
+									<td>Contrast</td>
+									<td><input id="fcontrast" type="range" min="0" max="200" step="1" " value=" 100"
+											onchange="filtercanvas(this.id,this.value)" /></td>
+								</tr>
+								<tr>
+									<td>Saturate</td>
+									<td><input id="fsaturate" type="range" min="0" max="200" step="1" " value=" 100"
+											onchange="filtercanvas(this.id,this.value)" /></td>
+								</tr>
+							</table>
+							<br>
+							<div class="row">
+									<div class="col-1"></div>
+									<div class="col-3 tool text-center">
+										<a href="#" class="btn btn-outline-primary" id="resize-btn">
+											<i class="fas fa-crop"></i>
+											<br>
+											Resize
+										</a>
+									</div>
+	
+									<div class="col-3 tool text-center">
+										<a href="#" class="btn btn-outline-primary" id="crop-btn">
+											<i class="fas fa-check"></i>
+											<br>
+											Crop
+										</a>
+									</div>
+									<div class="col-3 tool text-center">
+										<a href="#" class="btn btn-outline-primary" id="save-btn">
+											<i class="fas fa-save"></i>
+											<br>
+											Enregistrer
+										</a>
+									</div>
+									<div class="col-1"></div>
+	
+							</div>
+
+						</div>
+						<br />
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2">
+
+		</div>
+	</div>
+	</div>
+	<br />
+	<script src="js/script.js"></script>
 </body>
 
 </html>
